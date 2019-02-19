@@ -1,0 +1,20 @@
+{
+  "generator-st2pack": {
+    "promptValues": {
+      "features": [],
+      "pack_ref": "nexus3",
+      "pack_name": "Sontatype Nexus3",
+      "pack_desc": "Sontatype nexus3 stackstorm pack"
+    },
+    "actions": {},
+    "aliases": {},
+    "rules": {},
+    "sensors": {},
+    "policies": {},
+    "pack": {
+      "ref": "nexus3",
+      "name": "Sontatype Nexus3",
+      "description": "Sontatype nexus3 stackstorm pack"
+    }
+  }
+}
