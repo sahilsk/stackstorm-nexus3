@@ -17,10 +17,34 @@ to `/opt/stackstorm/configs/nexus3.yaml` and edit as required.
 
 add nexus3 server connection profile:
 
-* ``url`` - URL of the pack (e.g. ``https://myproject.abc.net``)
+* ``url`` - URL of the nexus3 server (e.g. ``http://localhost:8081``)
 * ``user`` - username
 * ``password`` - Password
 * ``verify`` - https tls verify
+
+You can also add multiple profiles:
+
+When you add multiple profile, above parameters becomes defaults for any key missing in the profile.
+
+``` yaml
+---
+url: "http://localhost:8081"
+user: "admin"
+password: "admin123"
+verify: True
+default_profile: "dev"  # use this to make for missing config_profile parameter when calling any action
+profiles:
+  "dev":
+    url: "http://localhost:8081"
+    user: "dev-user"
+    password: "mypas"
+    verify: True
+   "dev-2":
+     user: "dev2-user"
+     password: "mypass2"
+     # url : fallback to url: "http://localhost:8081"
+     # verify: fallback to verify: True
+```
 
 
 **Note** : When modifying the configuration in `/opt/stackstorm/configs/` please
@@ -50,7 +74,6 @@ add nexus3 server connection profile:
 
 
 ## Policies
-
 
 * **http.retry** : Retry core.http action on timeout.
 

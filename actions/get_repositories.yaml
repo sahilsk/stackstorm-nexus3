@@ -12,7 +12,7 @@ parameters:
   config_profile:
     type: string
     description: Select which nexus config profile to use.
-    required: true
+    required: false
   name:
     type: string
     description:  A unique identifier of the repository to fetch
